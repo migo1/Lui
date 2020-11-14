@@ -40,13 +40,13 @@ Coded by www.creative-tim.com
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+      <a href="{{ route('dashboard') }}" class="simple-text logo-mini">
           <!-- <div class="logo-image-small">
             <img src="./assets/img/logo-small.png">
           </div> -->
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="{{ route('dashboard') }}" class="simple-text logo-normal">
           LUI'S WEB APP
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
@@ -206,6 +206,7 @@ Coded by www.creative-tim.com
   <script src="{{asset('assets/js/core/jquery.min.js')}}"></script>
   <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
   <script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
+  @stack('clients')
   {{-- <script src="/js/app.js"></script> --}}
   <script src="{{asset('assets/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
   <!--  Google Maps Plugin    -->

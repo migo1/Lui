@@ -15,17 +15,21 @@
             <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
           <h5 class="title">{{ $client->name }}</h5>
           {{-- </a> --}}
-          <p class="description">
-            @chetfaker
+          <p class="text-center">
+            Join Date : {{ $client->start_date }}
           </p>
         </div>
-        <p class="description text-center">
-          "I like the way you work it <br>
-          No diggity <br>
-          I wanna bag it up"
+        <p class="text-center">
+          D.O.B : <span class="description text-center"></span>{{ $client->dob }}
+        </p>
+
+    
+
+        <p class="text-center">
+         Gender: <span class="description text-center"></span>{{ $gender }}
         </p>
       </div>
-      <div class="card-footer">
+      {{-- <div class="card-footer">
         <hr>
         <div class="button-container">
           <div class="row">
@@ -40,9 +44,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
-    <div class="card">
+    {{-- <div class="card">
       <div class="card-header">
         <h4 class="card-title">Team Members</h4>
       </div>
@@ -101,7 +105,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> --}}
   </div>
 
 
@@ -125,38 +129,37 @@
         <a href="{{ route('assessment.index', $client->id)}}" class="btn btn-sm btn-outline-warning float-right">{{ $client->name }}Assessment form</a></h5>
       </div>
       <div class="card-body">
-        <form>
           <div class="row">
-            <div class="col-md-5 pr-1">
+            <div class="col-md-4 pr-1">
               <div class="form-group">
-                <label>Company (disabled)</label>
-                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                <label>First Name</label>
+              <input type="text" class="form-control" value="{{ $client->name }}" disabled>
               </div>
             </div>
-            <div class="col-md-3 px-1">
+            <div class="col-md-4 px-1">
               <div class="form-group">
-                <label>Username</label>
-                <input type="text" class="form-control" placeholder="Username" value="michael23">
+                <label>Middle Name</label>
+              <input type="text" class="form-control" value="{{ $client->middle_name }}" disabled>
               </div>
             </div>
             <div class="col-md-4 pl-1">
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" placeholder="Email">
+                <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control" value="{{ $client->last_name }}" disabled>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 pr-1">
               <div class="form-group">
-                <label>First Name</label>
-                <input type="text" class="form-control" placeholder="Company" value="Chet">
+                <label>Email Address</label>
+              <input type="text" class="form-control"  value="{{ $client->email }}" disabled>
               </div>
             </div>
             <div class="col-md-6 pl-1">
               <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+                <label>Phone Number</label>
+              <input type="text" class="form-control" value="{{ $client->phone }}" disabled>
               </div>
             </div>
           </div>
@@ -164,7 +167,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label>Address</label>
-                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+              <input type="text" class="form-control"  value="{{ $client->address }}" disabled>
               </div>
             </div>
           </div>
@@ -172,36 +175,35 @@
             <div class="col-md-4 pr-1">
               <div class="form-group">
                 <label>City</label>
-                <input type="text" class="form-control" placeholder="City" value="Melbourne">
+              <input type="text" class="form-control" value="{{ $client->city }}" disabled>
               </div>
             </div>
             <div class="col-md-4 px-1">
               <div class="form-group">
                 <label>Country</label>
-                <input type="text" class="form-control" placeholder="Country" value="Australia">
+              <input type="text" class="form-control" value="{{ $client->country }}" disabled>
               </div>
             </div>
             <div class="col-md-4 pl-1">
               <div class="form-group">
                 <label>Postal Code</label>
-                <input type="number" class="form-control" placeholder="ZIP Code">
+              <input type="number" class="form-control" value="{{ $client->zip }}" disabled>
               </div>
             </div>
           </div>
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label>About Me</label>
                 <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
               </div>
             </div>
-          </div>
-          <div class="row">
+          </div> --}}
+          {{-- <div class="row">
             <div class="update ml-auto mr-auto">
               <button type="submit" class="btn btn-primary btn-round">Update Profile</button>
             </div>
-          </div>
-        </form>
+          </div> --}}
       </div>
     </div>
   </div>
