@@ -155,9 +155,18 @@ Coded by www.creative-tim.com
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">{{ auth()->user()->name }}</a>
+                  <a class="dropdown-item" href="#">{{ auth()->user()->email }}</a>
+                  <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                        {{ __('Logout') }}
+                    </x-jet-dropdown-link>
+                </form>
+                  {{-- <a class="dropdown-item" href="#">Something else here</a> --}}
                 </div>
               </li>
             </ul>
